@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 // C++ code generated with wxFormBuilder (version 4.1.0-0-g733bf3d)
 // http://www.wxformbuilder.org/
 //
@@ -82,11 +82,11 @@ MyFrame1::MyFrame1( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	m_ScrollBar_R_alpha = new wxScrollBar( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxSB_HORIZONTAL );
 	bSizer5->Add( m_ScrollBar_R_alpha, 1, wxALIGN_CENTER_VERTICAL|wxALL, 5 );
 
-	m_StaticText_R_alpha = new wxStaticText( this, wxID_ANY, _("0"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_StaticText_R_alpha->Wrap( -1 );
-	m_StaticText_R_alpha->SetMinSize( wxSize( 23,-1 ) );
+	m_StaticText_R_alpha_value = new wxStaticText( this, wxID_ANY, _("0"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_StaticText_R_alpha_value->Wrap( -1 );
+	m_StaticText_R_alpha_value->SetMinSize( wxSize( 23,-1 ) );
 
-	bSizer5->Add( m_StaticText_R_alpha, 0, wxALIGN_CENTER, 5 );
+	bSizer5->Add( m_StaticText_R_alpha_value, 0, wxALIGN_CENTER, 5 );
 
 
 	bSizer2->Add( bSizer5, 1, wxEXPAND, 5 );
@@ -190,7 +190,7 @@ MyFrame1::MyFrame1( wxWindow* parent, wxWindowID id, const wxString& title, cons
 	bSizer2->Add( bSizer9, 1, wxALIGN_CENTER|wxALL, 5 );
 
 
-	bSizer1->Add( bSizer2, 0, wxALIGN_RIGHT, 5 );
+	bSizer1->Add( bSizer2, 0, wxALIGN_CENTER|wxALL, 5 );
 
 
 	this->SetSizer( bSizer1 );

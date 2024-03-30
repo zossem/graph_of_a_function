@@ -1,4 +1,4 @@
-#include <wx/dc.h>
+﻿#include <wx/dc.h>
 #include <memory>
 
 #include "ChartClass.h"

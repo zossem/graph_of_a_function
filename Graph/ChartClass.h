@@ -1,9 +1,11 @@
-#ifndef __ChartClass__
+﻿#ifndef __ChartClass__
 #define __ChartClass__
 
 #include <memory>
 #include "ConfigClass.h"
 class Matrix;
+class ConfigClass;
+
 
 class ChartClass
 {

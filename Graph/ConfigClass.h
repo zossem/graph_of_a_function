@@ -1,20 +1,22 @@
-#ifndef __ConfigClass__
+﻿#ifndef __ConfigClass__
 #define __ConfigClass__
 
 #include "GUIMyFrame1.h"
 
+class GUIMyFrame1;
+
 class ConfigClass
 {
-    private:
-       GUIMyFrame1 *MainWindow;   // wskaznik do glownego okna aplikacji
-        double x0,y0,x1,y1;     // wspolrzedne definiujace prostokat swiata
-        double alpha;           // kat obrotu wykresu
-        bool ScreenRotate;      // jesli true obracamy wokol srodka ekranu
+private:
+    GUIMyFrame1 *MainWindow;   // wskaznik do glownego okna aplikacji
+    double x0,y0,x1,y1;     // wspolrzedne definiujace prostokat swiata
+    double alpha;           // kat obrotu wykresu
+    bool ScreenRotate;      // jesli true obracamy wokol srodka ekranu
                                 // jesli false obracamy punktu przeciecia osi
-        double dX,dY;           // przesuniecie wykresu wzgledem srodka ekranu
-        double x_start, x_stop; // zakres zmiennosci argumentu funkcji x
-        int F_type;             // rodzaj obliczanej funkcji
-    public:
+    double dX,dY;           // przesuniecie wykresu wzgledem srodka ekranu
+    double x_start, x_stop; // zakres zmiennosci argumentu funkcji x
+    int F_type;             // rodzaj obliczanej funkcji
+public:
         ConfigClass(GUIMyFrame1 *wnd);
         double Get_x_start(){return x_start;};
         void   Set_x_start(double v){x_start=v;};
