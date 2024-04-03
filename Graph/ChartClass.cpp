@@ -60,6 +60,7 @@ void ChartClass::Draw(wxDC *dc, int w, int h)
  dc->Clear();
  dc->SetPen(wxPen(RGB(255, 0, 0)));
  dc->DrawRectangle(10, 10, w - 20, h - 20);
+ dc->SetClippingRegion(10, 10, w - 20, h - 20);//do not draw everthing outside region
  
  dc->SetPen(wxPen(RGB(0, 0, 255)));
 
