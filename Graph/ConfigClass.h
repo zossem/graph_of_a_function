@@ -42,6 +42,7 @@ public:
         void Set_F_type(int i){F_type=i;};
         void Save(char *filename);
         void Load(char *filename);
+
 };
 
 #endif
