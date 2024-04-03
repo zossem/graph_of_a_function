@@ -60,11 +60,19 @@ void ChartClass::Draw(wxDC *dc, int w, int h)
  dc->Clear();
  dc->SetPen(wxPen(RGB(255, 0, 0)));
  dc->DrawRectangle(10, 10, w - 20, h - 20);
- dc->DrawText("Tu trzeba narysowac wykres", wxPoint(20, 20));
+ 
  dc->SetPen(wxPen(RGB(0, 0, 255)));
 
  SetPoints();
  Vector scale = Scale_of_Draw(w, h);
+
+ double x_valuse[3];
+ double y_valuse[3];
+ for (int i = 0; i < 3; i++)
+ {
+     x_valuse[i] = begin_points[i + 1].GetX();
+     y_valuse[i] = begin_points[i + 7].GetY();
+ }
 
  Matrix to_scale;//wypelnienie ekranu
  to_scale.data[0][0] = scale.GetX();
@@ -124,12 +132,9 @@ void ChartClass::Draw(wxDC *dc, int w, int h)
          line2d(translation_from_rotation, begin_points[i], end_points[i]);
      }
      
-
      line2d(to_mirror_X, begin_points[i], end_points[i]);
      line2d(to_center, begin_points[i], end_points[i]);
-     line2d(translation, begin_points[i], end_points[i]);
-          
-     
+     line2d(translation, begin_points[i], end_points[i]);  
  }
  
 
@@ -138,6 +143,15 @@ void ChartClass::Draw(wxDC *dc, int w, int h)
      if(i== AXIS_LINES)
          dc->SetPen(wxPen(RGB(50, 205, 50)));
      dc->DrawLine(begin_points[i].GetX(), begin_points[i].GetY(), end_points[i].GetX(), end_points[i].GetY());
+ }
+
+ for (int i = 1; i < 4; i++)//podzialka na osi x
+ {
+     dc->DrawRotatedText(std::to_string(x_valuse[i-1]), begin_points[i].GetX() +(10*sin(alfa)) , begin_points[i].GetY() + (10 * cos(alfa)), cfg->Get_Alpha());
+ }
+ for (int i = 7; i < 10; i++)//podzialka na osi y
+ {
+     dc->DrawRotatedText(std::to_string(y_valuse[i-7]), begin_points[i].GetX() + (10 * sin(alfa)), begin_points[i].GetY() + (10 * cos(alfa)), cfg->Get_Alpha());
  }
 }
 
@@ -202,8 +216,8 @@ void ChartClass::SetPoints()
 
 Vector ChartClass::Scale_of_Draw(int w, int h)
 {
-    double scal_x = (w - 30) / (cfg->Get_x1()-cfg->Get_x0());
-    double scal_y = (h - 30) / (cfg->Get_y1() - cfg->Get_y0());
+    double scal_x = (w - 20) / (cfg->Get_x1()-cfg->Get_x0());
+    double scal_y = (h - 20) / (cfg->Get_y1() - cfg->Get_y0());
     Vector scale;
     scale.Set(scal_x, scal_y);
     return scale;
