@@ -148,11 +148,11 @@ void ChartClass::Draw(wxDC *dc, int w, int h)
 
  for (int i = 1; i < 4; i++)//podzialka na osi x
  {
-     dc->DrawRotatedText(std::to_string(x_valuse[i-1]), begin_points[i].GetX() +(10*sin(alfa)) , begin_points[i].GetY() + (10 * cos(alfa)), cfg->Get_Alpha());
+     dc->DrawRotatedText(wxString::Format(wxT("%2.2lf"), (x_valuse[i - 1])), begin_points[i].GetX() + (10 * sin(alfa)), begin_points[i].GetY() + (10 * cos(alfa)), cfg->Get_Alpha());
  }
  for (int i = 7; i < 10; i++)//podzialka na osi y
  {
-     dc->DrawRotatedText(std::to_string(y_valuse[i-7]), begin_points[i].GetX() + (10 * sin(alfa)), begin_points[i].GetY() + (10 * cos(alfa)), cfg->Get_Alpha());
+     dc->DrawRotatedText(wxString::Format(wxT("%2.2lf"), (y_valuse[i-7])), begin_points[i].GetX() + (10 * sin(alfa)), begin_points[i].GetY() + (10 * cos(alfa)), cfg->Get_Alpha());
  }
 }
 

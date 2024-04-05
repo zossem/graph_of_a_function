@@ -136,6 +136,8 @@ else wxBell();
 void GUIMyFrame1::Choice_Selected_Function( wxCommandEvent& event )
 {
 cfg->Set_F_type(m_Choice_Function->GetSelection());
+m_staticText_Ay_min_value->SetLabel(wxString::Format(wxT("%2.4lf"), ChartClass(cfg).Get_Y_min()));
+m_staticText_Ay_max_value->SetLabel(wxString::Format(wxT("%2.4lf"), ChartClass(cfg).Get_Y_max()));
 }
 
 void GUIMyFrame1::Button_to_FrameRef_click( wxCommandEvent& event )
